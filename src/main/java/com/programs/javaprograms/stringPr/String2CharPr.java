@@ -7,8 +7,8 @@ import java.util.Map;
 public class String2CharPr {
 
     public void convertStringToChar() {
-        String str1 = "asdfghjkl";
-        char[] char1 = str1.toCharArray();
+        String str = "asdfghjkl";
+        char[] char1 = str.toCharArray();
         System.out.println("String converted to char Array: " + char1);
 
         System.out.println("char[] doesn't override toString(), so printing it directly prints the object reference.\n"
@@ -19,7 +19,20 @@ public class String2CharPr {
         System.out.println("\n-------------------------");
         getOccuranceOfChar();
         System.out.println("\n-------------------------");
+        reversedStringUsingStringBuilder();
+        System.out.println("\n-------------------------");
 
+    }
+
+    private void reversedStringUsingStringBuilder() {
+        System.out.println("Reversed String ");
+        String str1 = "abcdefxyz";
+        System.out.println("Original String is: " + str1);
+        StringBuilder sb = new StringBuilder();
+        for (int i = str1.length() - 1; i >= 0; i--) {
+            sb.append(str1.charAt(i));
+        }
+        System.out.println("Reversed String is: " + sb.toString());
     }
 
     private void getOccuranceOfChar() {
