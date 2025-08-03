@@ -1,7 +1,9 @@
 package com.programs.javaprograms.stringPr;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class String2CharPr {
@@ -21,7 +23,19 @@ public class String2CharPr {
         System.out.println("\n-------------------------");
         reversedStringUsingStringBuilder();
         System.out.println("\n-------------------------");
+        System.out.println("Palindrome check:" + checkPalindrome("abb"));
+        System.out.println("\n-------------------------");
 
+    }
+
+    private String checkPalindrome(String string) {
+        String str1 = string;
+        for (int i = 0; i < str1.length() / 2; i++) {
+            if (str1.charAt(str1.length() - i - 1) != str1.charAt(i)) {
+                return " Not a Palindrome: " + str1;
+            }
+        }
+        return "Palindrom String: " + str1;
     }
 
     private void reversedStringUsingStringBuilder() {
@@ -33,6 +47,17 @@ public class String2CharPr {
             sb.append(str1.charAt(i));
         }
         System.out.println("Reversed String is: " + sb.toString());
+
+        String str2 = "I am java programer";
+        System.out.println("Original word is: " + str2);
+        String strArray[] = str2.split(" ");
+        List<String> list = Arrays.asList(strArray);
+        Collections.reverse(list);
+        String reverseWord = String.join(" ", list);
+        System.out.println("\n String.join(\" \", list)"
+                + "does not add a space at the beginning or end of the string — only between the elements.");
+        System.out.println("\nReversed word is: " + reverseWord);
+
     }
 
     private void getOccuranceOfChar() {

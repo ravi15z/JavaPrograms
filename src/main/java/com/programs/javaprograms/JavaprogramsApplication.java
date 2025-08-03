@@ -3,6 +3,7 @@ package com.programs.javaprograms;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.programs.javaprograms.arrayPrograms.ArrayPrograms;
 import com.programs.javaprograms.java8.StreamApi;
 import com.programs.javaprograms.stringPr.String2CharPr;
 
@@ -17,6 +18,9 @@ public class JavaprogramsApplication {
 		String2CharPr string2CharPr = new String2CharPr();
 		string2CharPr.convertStringToChar();
 
+		System.out.println("######  Array Programs  ######");
+		ArrayPrograms arp = new ArrayPrograms();
+		arp.getArrayPrograms();
 		streamPrograms();
 	}
 
