@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.programs.javaprograms.arrayPrograms.ArrayPrograms;
-import com.programs.javaprograms.java8.StreamApi;
 import com.programs.javaprograms.stringPr.String2CharPr;
 
 @SpringBootApplication
@@ -21,11 +20,6 @@ public class JavaprogramsApplication {
 		System.out.println("######  Array Programs  ######");
 		ArrayPrograms arp = new ArrayPrograms();
 		arp.getArrayPrograms();
-		streamPrograms();
 	}
 
-	private static void streamPrograms() {
-		String highestLength = StreamApi.highestLength();
-		System.out.println("Highest length word is:" + highestLength);
-	}
 }

@@ -17,6 +17,9 @@ public class ArrayPrograms {
         System.out.println("\n-------------------------");
         getPairedSumElement();
         System.out.println("\n-------------------------");
+        sortArray();
+        System.out.println("\n-------------------------");
+        maxSubArray();
     }
 
     private void getPairedSumElement() {
@@ -81,5 +84,40 @@ public class ArrayPrograms {
         Set<Integer> duplicateSetList = Arrays.stream(arr).boxed().filter(a -> !uniqueNo1.add(a))
                 .collect(Collectors.toSet());
         System.out.println("Dupicate no using toSet(): " + duplicateSetList);
+    }
+
+    private void sortArray() {
+        int a[] = { 9, 1, 8, 2, 7, 3, 6, 4, 5 };
+        System.out.println("Array :" + Arrays.toString(a));
+        int temp = 0;
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = 0; j < a.length - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                    System.out.println(" middle sorted array :" + Arrays.toString(a));
+                }
+            }
+        }
+        System.out.println(" Sorted array:" + Arrays.toString(a));
+    }
+
+    private void maxSubArray() {
+        System.out.println("Find the subarray (containing at least one element) which has the maximum possible sum");
+        int a[] = { 1, 2, 3, 4, 5, -25, -10, -5, 20, 10 };
+        int currentSum = a[0];
+        int maxSum = a[0];
+        for (int i = 0; i < a.length; i++) {
+            if ((currentSum + a[i] < a[i])) {
+                currentSum = a[i];
+            } else {
+                currentSum = currentSum + a[i];
+            }
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
+        System.out.println("\n maxSubArray sum: " + maxSum);
     }
 }
